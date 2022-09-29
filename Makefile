@@ -19,14 +19,14 @@ validate-ttl: description.ttl | tools/jena/bin/riot
 	./tools/jena/bin/riot --validate $<
 	@echo "Turtle file is valid."
 
-validate-jsonld: description.jsonld | tools/jena/bin/riot
+validate-jsonld: description.json | tools/jena/bin/riot
 	./tools/jena/bin/riot --validate $<
 	@echo "JSON-LD file is valid."
 
 from-ttl.nt: description.ttl | validate-ttl
 	./tools/jena/bin/riot --output=ntriples $< | sort > $@
 
-from-jsonld.nt: description.jsonld | validate-jsonld
+from-jsonld.nt: description.json | validate-jsonld
 	./tools/jena/bin/riot --output=ntriples $< | sort > $@
 
 compare: from-ttl.nt from-jsonld.nt

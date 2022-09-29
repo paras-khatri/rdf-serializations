@@ -38,7 +38,7 @@ Then open `graph.png` in your image viewer of choice.
 
 ## Validate your JSON-LD file
 
-Create a JSON-LD file and save it as `description.jsonld` within the
+Create a JSON-LD file and save it as `description.json` within the
 `rdf-serializations` directory.
 
 Then run:
