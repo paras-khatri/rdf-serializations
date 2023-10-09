@@ -8,7 +8,7 @@ superclean:
 	$(MAKE) -s -C tools/rdflib clean
 
 tools/jena/bin/riot:
-	which java || sudo apt update && sudo apt -y install default-jre
+	which java || (sudo apt update && sudo apt -y install default-jre)
 	$(MAKE) -s -C tools/jena
 
 tools/rdflib/bin/rdf2dot:
@@ -30,9 +30,9 @@ from-jsonld.nt: description.json | validate-jsonld
 	./tools/jena/bin/riot --output=ntriples $< | sort > $@
 
 compare: from-ttl.nt from-jsonld.nt
-	which ccdiff || sudo apt update && sudo apt -y install ccdiff
+	which ccdiff || (sudo apt update && sudo apt -y install ccdiff)
 	ccdiff -u $^
 
 graph.png: description.ttl | validate-ttl tools/rdflib/bin/rdf2dot
-	which dot || sudo apt update && sudo apt -y install graphviz
+	which dot || (sudo apt update && sudo apt -y install graphviz)
 	./tools/rdflib/bin/rdf2dot $< | dot -Tpng > $@
