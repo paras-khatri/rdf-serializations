@@ -3,4 +3,5 @@ tools/jena/*
 tools/rdflib/*
 !tools/rdflib/Makefile
 /from-ttl.nt
+/from-jsonld.nt
 /graph.png
