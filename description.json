@@ -4,8 +4,8 @@
     "loves": {
       "@id": "ex:loves",
       "@type": "@id"
-    },
-  }
-  "@id": "ryan",
-  "loves": "cookies"
+    }
+  },
+  "@id": "ex:ryan",
+  "loves": "ex:cookies"
 }
