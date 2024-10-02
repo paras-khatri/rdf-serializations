@@ -21,14 +21,14 @@ validate-ttl: description.ttl | $(RIOT)
 	@echo "Turtle file is valid."
 
 validate-jsonld: description.json | $(RIOT)
-	./$(RIOT) --validate $<
+	./$(RIOT) --validate --syntax=jsonld $<
 	@echo "JSON-LD file is valid."
 
 from-ttl.nt: description.ttl | validate-ttl
 	./$(RIOT) --output=ntriples $< | sort > $@
 
 from-jsonld.nt: description.json | validate-jsonld
-	./$(RIOT) --output=ntriples $< | sort > $@
+	./$(RIOT) --output=nquads --syntax=jsonld $< | sort > $@
 
 compare: from-ttl.nt from-jsonld.nt
 	ccdiff -u $^
