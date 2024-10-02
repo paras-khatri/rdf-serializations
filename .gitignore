@@ -1,0 +1,6 @@
+tools/jena/*
+!tools/jena/Makefile
+tools/rdflib/*
+!tools/rdflib/Makefile
+/from-ttl.nt
+/graph.png

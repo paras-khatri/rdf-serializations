@@ -1,10 +1,10 @@
 # RDF serializations
 
+Comparing the Turtle, N-Triples, and JSON-LD serializations of RDF.
+
 ## Validate your Turtle file
 
-Edit `description.ttl` and write some triples using Turtle.
-
-Then run:
+Edit `description.ttl`, then run:
 
 ```sh
 make validate-ttl
@@ -16,7 +16,6 @@ Run:
 
 ```sh
 make from-ttl.nt
-cat from-ttl.nt
 ```
 
 ## View your Turtle file as a graph
@@ -27,13 +26,9 @@ Run:
 make graph.png
 ```
 
-Then open `graph.png` in your image viewer of choice.
-
 ## Validate your JSON-LD file
 
-Edit `description.json` and write some triples using JSON-LD.
-
-Then run:
+Edit `description.json`, then run:
 
 ```sh
 make validate-jsonld
@@ -45,7 +40,6 @@ Run:
 
 ```sh
 make from-jsonld.nt
-cat from-jsonld.nt
 ```
 
 ## Compare the triples produced from your Turtle and JSON-LD files
