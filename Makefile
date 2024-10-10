@@ -35,3 +35,6 @@ compare: from-ttl.nt from-jsonld.nt
 
 graph.png: description.ttl | validate-ttl $(RDF2DOT)
 	./$(RDF2DOT) $< | dot -Tpng > $@
+
+inferred.ttl: description.ttl vocab.ttl | validate-ttl
+	./$(RIOT) --formatted=ttl --rdfs=$(word 2,$^) $< > $@
