@@ -6,6 +6,6 @@
       "@type": "@id"
     }
   },
-  "@id": "ex:ryan",
-  "loves": "ex:cookies"
+  "@id": "ex:paras",
+  "rides": "ex:bikes"
 }
